@@ -1,0 +1,68 @@
+Manual of making song files for UltraStar [For version 0.2.1 or high]
+
+1. Files and programs
+ - .txt file, where you will write notes and lyrics of song.
+ - .mp3 file with song.
+ - .midi file with song
+ - program to read notes from midi files [ex. Cakewalk pro audio 9 (can be demo version)] + Adobe
+audition, Cool Edit or something like that.
+ txt and mp3 files should be placed in folder Songs
+ ! For version 0.3.0 and high each song has its own subfolder placed in 'Songs' folder!
+
+2. Writing in .txt file
+
+ 2.1 Headers
+ 
+    Txt file should contain following headers:
+	#TITLE:		[title of song]
+	#ARTIST:	[artist ;)]
+	#MP3:		[mp3 file name, ex. song.mp3]
+	#RELATIVE:yes	[countdown after screen changing begins from 0; it makes work easier]
+	#BPM:		[Beats Per Minute, you can check it in various programs for music editing]
+	#GAP:		[in miliseconds, distance from beginning of song to beginning of lyrics]
+
+ 2.2 Notes
+	Every note must be write by a following instructions
+	   : time  note_lenght note_tone lyrics
+ 		explanation:
+		  -time countdown begins from 0 in begining of song and changes every screen.
+		  -note_lenght: 1 for semiquaver
+		  		2 for quaver
+				4 for crotchet
+				8 for minim
+			       16 for full note [?]
+		  -note_tone: here we use program for reading notes from midi, the best is to
+program showing tone in number - just write it in txt file. You can also count number, C1 is 0.
+		  -lyrics: lyrics for note [mostly one note is one syllabe], remember to make a
+space after ending each word.
+
+
+	Example   : 0 2 60 So
+		  : 2 2 61 me
+		  : 4 4 60 ly
+		  : 8 4 65 rics
+
+ 2.3 Screen changing [new text line]
+	Screen changing is made after each one line of lyrics.
+	Close the line by writing:
+ 	-time_of_screen_end time_of_new_screen
+	We count time the same way like notes
+          time_of_screen_end - makes ended line to disapear
+ 	  time_of_new_screen - makes next line to show on screen
+	
+	Example     : 0 2 60 So
+		    : 2 2 61 me
+		    : 4 4 60 ly
+		    : 8 4 65 rics
+		    -12 14
+		    : 2 8 58 other
+		    : 10 8 56 lyrics
+		    -20 22
+
+ 2.4 Pauses
+	If there is a pause then just add time of pause to time on next note.
+
+ 2.5 End of song
+	End of song is described by letter E. Write it in new line without anything before it.
+Everything after it will be ignored.
+
