@@ -14,14 +14,13 @@ class Theme
 
 	string theme;
 
-	SDL_Surface *screen;
 	SDL_Surface *backgroundsurface;
 
 	string themepath;
 	string backgroundpath;
 
 	Theme();
-	Theme(string theme, SDL_Surface *screen);
+	Theme(string theme);
 };
 
 #endif

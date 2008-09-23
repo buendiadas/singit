@@ -2,14 +2,25 @@
 #include <iostream>
 #include <dirent.h>
 
+using namespace std;
+
+int varGlobal;
+
+class Prueba
+{
+	public:
+	Prueba()
+	{
+		varGlobal = 1;
+	}
+};
+
 int main(int argc, char *argv[])
 {
-	int i = chdir(argv[1]);
+	Prueba p;
 
-	char cwd[255];
+	printf("Var global: %d\n", varGlobal);
 
-	getcwd(cwd, 255);
-
-	printf("%d Current: %s\n", i, cwd);
 	return 0;
 }
+
