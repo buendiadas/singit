@@ -4,9 +4,8 @@ Theme::Theme()
 {
 }
 
-Theme::Theme(string theme, SDL_Surface *screen)
+Theme::Theme(string theme)
 {
-	this->screen = screen;
 	this->theme = theme;
 
 	string themepath = "themes/" + theme;

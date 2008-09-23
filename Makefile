@@ -12,14 +12,11 @@ EXECUTABLE=singit
 
 remake: clean singit
 
-singit: Theme.o Song.o SongSelector.o SingIt.o main.o
-	$(CC) -o $(EXECUTABLE) Theme.o Song.o SongSelector.o SingIt.o main.o $(ALLFLAGS)
+singit: Theme.o Song.o SongSelector.o main.o
+	$(CC) -o $(EXECUTABLE) Theme.o Song.o SongSelector.o main.o $(ALLFLAGS)
 
 main.o:
 	$(CC) -c main.cpp $(ALLFLAGS)
-
-SingIt.o:
-	$(CC) -c SingIt.cpp SingIt.h $(ALLFLAGS)
 
 SongSelector.o:
 	$(CC) -c SongSelector.cpp SongSelector.h $(SDLFLAGS) $(SDLMIXERFLAGS) $(SDLIMAGEFLAGS) $(SDLGFXFLAGS)

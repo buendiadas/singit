@@ -32,6 +32,7 @@ Song::Song(string path)
 
 	if(found)
 	{
+		//Song data found
 		this->path = path;
 		parseSongConfFile(path + "/" + str);
 
@@ -65,6 +66,10 @@ Song::Song(string path)
 			printf("No se pudo cargar el fondo de la canción\n");
 		}
 
+	}
+	else
+	{
+		// Song data not found
 	}
 }
 
@@ -173,7 +178,7 @@ void Song::parseSongConfFile(string path)
 	}
 }
 
-void Song::play()
+void Song::playMusic()
 {
 	if(mixmusic != NULL)
 	{
